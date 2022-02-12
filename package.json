@@ -2,10 +2,11 @@
     "name": "nodejs-dev-pack",
     "displayName": "NodeJS Dev Pack",
     "description": "NodeJS development extensions kit",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "engines": {
         "vscode": "^1.64.0"
     },
+    "icon": "images/ext-logo.png",
     "categories": [
         "Extension Packs"
     ],
