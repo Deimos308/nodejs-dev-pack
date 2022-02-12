@@ -1,0 +1,44 @@
+{
+    "name": "nodejs-dev-pack",
+    "displayName": "NodeJS Dev Pack",
+    "description": "NodeJS development extensions kit",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.64.0"
+    },
+    "categories": [
+        "Extension Packs"
+    ],
+     "repository": {
+          "type": "git",
+          "url": "https://github.com/npm/cli.git"
+        },
+      
+    "extensionPack": [ 
+        "aaron-bond.better-comments", 
+        "adam-bender.commit-message-editor", 
+        "alefragnani.project-manager", 
+        "christian-kohler.npm-intellisense", 
+        "codebytesfl.ccomment",
+        "dbaeumer.vscode-eslint", 
+        "eamodio.gitlens", 
+        "esbenp.prettier-vscode", 
+        "felicio.vscode-fold", 
+        "fractalbrew.backticks", 
+        "GitHub.vscode-pull-request-github",
+        "Gruntfuggly.todo-tree", 
+        "helgardrichard.helium-icon-theme",  
+        "mhutchie.git-graph", 
+        "mikestead.dotenv", 
+        "mkxml.vscode-filesize", 
+        "nhoizey.gremlins", 
+        "oouo-diogo-perdigao.docthis", 
+        "Orta.vscode-jest",
+        "pnp.polacode", 
+        "Shan.code-settings-sync", 
+        "streetsidesoftware.code-spell-checker", 
+        "Tyriar.sort-lines", 
+        "usernamehw.errorlens",
+        "wix.vscode-import-cost"
+    ]
+}
