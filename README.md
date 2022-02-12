@@ -1,6 +1,6 @@
-# Node Essentials
+# NodeJS Dev Pack
 
-This pack includes some extensions that help with developing node.js application in a group environment.
+This pack includes some extensions that help with developing NodeJS application.
 
 ## Extensions Included
 
