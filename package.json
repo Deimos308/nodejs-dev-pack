@@ -1,45 +1,510 @@
 {
-    "name": "nodejs-dev-pack",
-    "displayName": "NodeJS Dev Pack",
-    "description": "NodeJS development extensions kit",
-    "version": "1.0.1",
-    "engines": {
-        "vscode": "^1.64.0"
-    },
-    "icon": "images/ext-logo.png",
-    "categories": [
-        "Extension Packs"
+  "name": "nodejs-dev-pack",
+  "displayName": "NodeJS Dev Pack",
+  "description": "NodeJS development extensions kit",
+  "version": "1.5.0",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "icon": "images/ext-logo.png",
+  "categories": [
+    "Extension Packs",
+    "Programming Languages",
+    "Other"
+  ],
+  "publisher": "AndrewSai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Deimos308/nodejs-dev-pack.git"
+  },
+  "extensionPack": [
+    "aaron-bond.better-comments",
+    "adam-bender.commit-message-editor",
+    "alefragnani.project-manager",
+    "christian-kohler.npm-intellisense",
+    "DavidAnson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "dotenv.dotenv-vscode",
+    "eamodio.gitlens",
+    "EliverLara.andromeda",
+    "esbenp.prettier-vscode",
+    "fractalbrew.backticks",
+    "Gruntfuggly.todo-tree",
+    "helgardrichard.helium-icon-theme",
+    "mhutchie.git-graph",
+    "mkxml.vscode-filesize",
+    "mlewand.select-part-of-word",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode.vscode-js-profile-flame",
+    "nhoizey.gremlins",
+    "pnp.polacode",
+    "streetsidesoftware.code-spell-checker",
+    "Tyriar.sort-lines",
+    "usernamehw.errorlens",
+    "YoavBls.pretty-ts-errors",
+    "yzhang.markdown-all-in-one"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      }
     ],
-    "publisher": "AndrewSai",
-     "repository": {
-          "type": "git",
-          "url": "https://github.com/Deimos308/nodejs-dev-pack.git"
+    "configuration": {
+      "properties": {
+        "debug.toolBarLocation": {
+          "type": "string",
+          "default": "docked",
+          "description": "Location of the debug toolbar."
+        },
+        "editor.bracketPairColorization.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable bracket pair colorization."
+        },
+        "editor.fontLigatures": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable font ligatures in the editor."
+        },
+        "editor.guides.bracketPairs": {
+          "type": "string",
+          "default": "active",
+          "description": "Controls the visibility of bracket pair guides."
+        },
+        "editor.minimap.enabled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable or disable the editor minimap."
+        },
+        "editor.renderControlCharacters": {
+          "type": "boolean",
+          "default": true,
+          "description": "Render control characters in the editor."
+        },
+        "editor.unicodeHighlight.ambiguousCharacters": {
+          "type": "boolean",
+          "default": false,
+          "description": "Highlight ambiguous Unicode characters."
+        },
+        "editor.wordBasedSuggestions": {
+          "type": "string",
+          "default": "off",
+          "description": "Enable or disable word-based suggestions in the editor."
+        },
+        "editor.wordWrap": {
+          "type": "string",
+          "default": "on",
+          "description": "Control how lines should wrap in the editor."
+        },
+        "editor.renderWhitespace": {
+          "type": "string",
+          "default": "all",
+          "description": "Control how whitespace is rendered in the editor."
+        },
+        "editor.rulers": {
+          "type": "array",
+          "default": [
+            {
+              "column": 100,
+              "color": "#FFFFaa"
+            }
+          ],
+          "description": "Render vertical rulers after a certain number of characters."
+        },
+        "explorer.fileNesting.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable file nesting in the Explorer."
+        },
+        "git.autofetch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable automatic fetching of Git repos."
+        },
+        "git.confirmSync": {
+          "type": "boolean",
+          "default": false,
+          "description": "Confirm when syncing Git repos."
+        },
+        "git.suggestSmartCommit": {
+          "type": "boolean",
+          "default": false,
+          "description": "Suggest smart commit messages."
+        },
+        "files.associations": {
+          "type": "object",
+          "default": {
+            "*.ejs": "html",
+            "*.eta": "html",
+            "*.env.?*": "dotenv",
+            "*.env": "dotenv"
+          },
+          "description": "File associations for specific file types."
+        },
+        "helium-icon-theme.files.associations": {
+          "type": "object",
+          "default": {
+            "*.eta": "ejs",
+            "*.schema.js": "Raml",
+            "*.schema.ejs": "xaml",
+            "*.repo.js": "database",
+            "*.assets.js": "aurelia",
+            "*.router.js": "routing",
+            "*.dto.js": "purescript",
+            "*.config.js": "settings",
+            "*.model.js": "sequelize",
+            "**.webpack.js": "webpack",
+            "*.scheme.js": "purescript",
+            "*.provider.js": "database",
+            "*.repository.js": "database",
+            "*.mapper.js": "Nest-gateway"
+          },
+          "description": "File icon associations for Helium Icon theme."
+        },
+        "helium-icon-theme.folders.associations": {
+          "type": "object",
+          "default": {
+            "DTO": "Ci",
+            "_dev": "mock",
+            ".pm2": "hook",
+            "ejs": "stack",
+            "eta": "stack",
+            "build": "core",
+            "schema": "less",
+            "schemas": "less",
+            "router": "routes",
+            "local": "private",
+            "modules": "layout",
+            "amp": "serverless",
+            "backend": "server",
+            "common": "resource",
+            "repos": "database",
+            "queries": "template",
+            "adapters": "generator",
+            "providers": "database",
+            "sitemaps": "components",
+            "repository": "database"
+          },
+          "description": "Folder icon associations for Helium Icon theme."
+        },
+        "dotenv.enableAutocloaking": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable autocloaking of .env files."
+        },
+        "helium-icon-theme.saturation": {
+          "type": "number",
+          "default": 0.9,
+          "description": "Set the icon theme saturation level."
+        },
+        "helium-icon-theme.activeIconPack": {
+          "type": "string",
+          "default": "nest",
+          "description": "Set the active icon pack for Helium Icon theme."
+        },
+        "commit-message-editor.view.defaultView": {
+          "type": "string",
+          "default": "form",
+          "description": "Set the default view for the commit message editor."
+        },
+        "javascript.inlayHints.functionLikeReturnTypes.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable inlay hints for function return types."
+        },
+        "javascript.inlayHints.parameterNames.enabled": {
+          "type": "string",
+          "default": "literals",
+          "description": "Enable parameter name hints for literals."
+        },
+        "javascript.inlayHints.parameterTypes.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable inlay hints for parameter types."
+        },
+        "js/ts.implicitProjectConfig.checkJs": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable JS file checking in TS projects."
+        },
+        "js/ts.implicitProjectConfig.strictNullChecks": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable strict null checks in JS/TS projects."
+        },
+        "search.useGlobalIgnoreFiles": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use global ignore files for search."
+        },
+        "search.useIgnoreFiles": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use .gitignore for search."
+        },
+        "telemetry.telemetryLevel": {
+          "type": "string",
+          "default": "off",
+          "description": "Set the telemetry level for VSCode."
+        },
+        "workbench.colorTheme": {
+          "type": "string",
+          "default": "Andromeda Colorizer",
+          "description": "Set the color theme."
+        },
+        "workbench.iconTheme": {
+          "type": "string",
+          "default": "helium-icon-theme",
+          "description": "Set the icon theme."
+        },
+        "editor.stickyScroll.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable sticky scroll in the editor."
+        },
+        "commit-message-editor.tokens": {
+          "type": "array",
+          "default": [
+            {
+              "label": "Type",
+              "name": "type",
+              "type": "enum",
+              "options": [
+                {
+                  "label": "---",
+                  "value": ""
+                },
+                {
+                  "label": "accessability",
+                  "description": "Improve accessibility",
+                  "value": "♿️"
+                },
+                {
+                  "label": "analytics",
+                  "description": "Add or update analytics or track code",
+                  "value": "📈"
+                },
+                {
+                  "label": "assets",
+                  "description": "Add or update assets",
+                  "value": "🍱"
+                },
+                {
+                  "label": "build",
+                  "description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)",
+                  "value": "🏗️"
+                },
+                {
+                  "label": "ci",
+                  "description": "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)",
+                  "value": "👷"
+                },
+                {
+                  "label": "config",
+                  "description": "Add or update configuration files",
+                  "value": "🔧"
+                },
+                {
+                  "label": "db",
+                  "description": "Perform database related changes",
+                  "value": "🗃️"
+                },
+                {
+                  "label": "dependencies",
+                  "description": "Add or update compiled files or packages",
+                  "value": "📦️"
+                },
+                {
+                  "label": "deployment",
+                  "description": "Deploy stuff",
+                  "value": "🚀"
+                },
+                {
+                  "label": "docs",
+                  "description": "Documentation only changes",
+                  "value": "📝"
+                },
+                {
+                  "label": "dx",
+                  "description": "Improve developer experience",
+                  "value": "🧑‍💻"
+                },
+                {
+                  "label": "feat",
+                  "description": "A new feature",
+                  "value": "✨"
+                },
+                {
+                  "label": "feat-flag",
+                  "description": "Add, update, or remove feature flags",
+                  "value": "🚩"
+                },
+                {
+                  "label": "fix",
+                  "description": "Simple fix for a non-critical issue",
+                  "value": "🩹"
+                },
+                {
+                  "label": "format",
+                  "description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)",
+                  "value": "🎨"
+                },
+                {
+                  "label": "hotfix",
+                  "description": "Critical issue hotfix",
+                  "value": "🚑️"
+                },
+                {
+                  "label": "i18n",
+                  "description": "Internationalization and localization",
+                  "value": "🌐"
+                },
+                {
+                  "label": "lint",
+                  "description": "Fix compiler / linter warnings.",
+                  "value": "🚨"
+                },
+                {
+                  "label": "merge",
+                  "description": "Merge branches",
+                  "value": "🔀"
+                },
+                {
+                  "label": "perf",
+                  "description": "A code change that improves performance",
+                  "value": "⚡️"
+                },
+                {
+                  "label": "refactor",
+                  "description": "A code change that neither fixes a bug nor adds a feature",
+                  "value": "♻️"
+                },
+                {
+                  "label": "revert",
+                  "description": "Revert changes",
+                  "value": "⏪️"
+                },
+                {
+                  "label": "script",
+                  "description": "Add or update development scripts",
+                  "value": "🔨"
+                },
+                {
+                  "label": "secrets",
+                  "description": "Add or update secrets",
+                  "value": "🔐"
+                },
+                {
+                  "label": "security",
+                  "description": "Fix security issues",
+                  "value": "🔒️"
+                },
+                {
+                  "label": "seo",
+                  "description": "Improve SEO",
+                  "value": "🔍️"
+                },
+                {
+                  "label": "style",
+                  "description": "Add or update the UI and style files.",
+                  "value": "💄"
+                },
+                {
+                  "label": "test",
+                  "description": "Adding missing tests or correcting existing tests",
+                  "value": "🧪"
+                },
+                {
+                  "label": "types",
+                  "description": "Add or update types.",
+                  "value": "🏷️"
+                },
+                {
+                  "label": "typo",
+                  "description": "Fix typos",
+                  "value": "✏️"
+                },
+                {
+                  "label": "validation",
+                  "description": "Add or update code related to validation",
+                  "value": "🦺"
+                }
+              ]
+            },
+            {
+              "label": "Scope",
+              "name": "scope",
+              "description": "Additional context",
+              "type": "text"
+            },
+            {
+              "label": "Short description",
+              "name": "description",
+              "type": "text"
+            }
+          ],
+          "description": "Commit message token configuration"
+        }
+      }
     },
-    "extensionPack": [ 
-        "aaron-bond.better-comments", 
-        "adam-bender.commit-message-editor", 
-        "alefragnani.project-manager", 
-        "christian-kohler.npm-intellisense", 
-        "codebytesfl.ccomment",
-        "dbaeumer.vscode-eslint", 
-        "eamodio.gitlens", 
-        "esbenp.prettier-vscode", 
-        "felicio.vscode-fold", 
-        "fractalbrew.backticks", 
-        "GitHub.vscode-pull-request-github",
-        "Gruntfuggly.todo-tree", 
-        "helgardrichard.helium-icon-theme",  
-        "mhutchie.git-graph", 
-        "mikestead.dotenv", 
-        "mkxml.vscode-filesize", 
-        "nhoizey.gremlins", 
-        "oouo-diogo-perdigao.docthis", 
-        "Orta.vscode-jest",
-        "pnp.polacode", 
-        "Shan.code-settings-sync", 
-        "streetsidesoftware.code-spell-checker", 
-        "Tyriar.sort-lines", 
-        "usernamehw.errorlens",
-        "wix.vscode-import-cost"
+    "keybindings": [
+      {
+        "key": "ctrl+w",
+        "command": "deleteWordLeft",
+        "when": "textInputFocus && !editorReadonly"
+      },
+      {
+        "key": "ctrl+backspace",
+        "command": "-deleteWordLeft",
+        "when": "textInputFocus && !editorReadonly"
+      },
+      {
+        "key": "ctrl+shift+w",
+        "command": "deleteWordRight",
+        "when": "textInputFocus && !editorReadonly"
+      },
+      {
+        "key": "ctrl+delete",
+        "command": "-deleteWordRight",
+        "when": "textInputFocus && !editorReadonly"
+      },
+      {
+        "key": "shift+delete",
+        "command": "-deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+      },
+      {
+        "key": "shift+delete",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+      },
+      {
+        "key": "ctrl+shift+u",
+        "command": "editor.action.transformToUppercase",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+shift+l",
+        "command": "editor.action.transformToLowercase",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+      },
+      {
+        "key": "ctrl+d",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+      },
+      {
+        "key": "ctrl+shift+i",
+        "command": "-editor.action.formatDocument",
+        "when": "editorTextFocus && !editorReadonly"
+      }
     ]
+  }
 }

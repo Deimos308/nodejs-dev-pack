@@ -1,0 +1,49 @@
+{
+  "Print 'Triggered' to console": {
+    "prefix": "trlg",
+    "body": ["console.log('Triggered => $1');", "$2"],
+    "description": "Log 'Triggered =>' + output to console"
+  },
+
+  "Print 'Object' to console": {
+    "prefix": "dir",
+    "body": ["console.dir($1, { depth: 10 });", "$2"],
+    "description": "Log object with nested structure to console"
+  },
+
+  "For of loop for key-value pairs of Object": {
+    "prefix": "forofkv",
+    "body": ["for (const [key,value] of Object.entries($1)) {", "\t$2", "}"],
+    "description": "For loop: key-value pair iteration"
+  },
+
+  "Print 'Triggered' with escaped output to console": {
+    "prefix": "trlgesc",
+    "body": ["console.log(`Triggered => ${$1}`);", "$2"],
+    "description": "Log 'Triggered =>' + escaped output to console"
+  },
+
+  "Destructuring assignment": {
+    "prefix": "deas",
+    "body": ["const { $2 } = $1;", "$3"],
+    "description": "Generate destructuring assignment expression"
+  },
+
+  "NodeJS module import statement": {
+    "prefix": "rqr",
+    "body": ["const $2 = require('$1');", "$3"],
+    "description": "Generate NodeJS 'require' statement"
+  },
+
+  "NodeJS module import statement with destructuring": {
+    "prefix": "rqrd",
+    "body": ["const { $2 } = require('$1');", "$3"],
+    "description": "Generate NodeJS 'require' statement with destructuring"
+  },
+
+  "Self executed async function template": {
+    "prefix": "seaf",
+    "body": ["(async () => {", "$0", "})()"],
+    "description": "Generate self executed async arrow function template"
+  }
+}
